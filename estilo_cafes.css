@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1e140f 0%, #3c2f2f 50%, #8b5a2b 100%);
+    font-family: 'Poppins', system-ui, sans-serif;
+    color: #3c2f2f;
+    line-height: 1.8;
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://source.unsplash.com/random/1920x1080/?coffee-beans') center/cover;
+    opacity: 0.08;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    background: rgba(255, 250, 240, 0.96);
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(30, 20, 15, 0.6);
+    border: 16px solid #2c1e16;
+    backdrop-filter: blur(10px);
+}
+
+/* HERO HEADER */
+header {
+    background: linear-gradient(rgba(44, 30, 22, 0.75), rgba(28, 18, 12, 0.85)), 
+                url('cafe.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 30px 70px;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(to right, transparent, #f4a261, transparent);
+}
+
+.titulo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4.8rem;
+    text-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.subtitle {
+    font-size: 1.45rem;
+    opacity: 0.9;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.galeria img {
+    width: 245px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 8px solid #f4a261;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.galeria img:hover {
+    transform: scale(1.18) rotate(6deg);
+    border-color: #fff;
+    box-shadow: 0 30px 55px rgba(244, 162, 97, 0.7);
+}
+
+/* CONTEÚDO */
+main {
+    padding: 70px 80px 50px;
+}
+
+h1 {
+    color: #2c1e16;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 50px 0 40px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+}
+
+h1::after {
+    content: '☕';
+    font-size: 3.2rem;
+    display: block;
+    margin: 12px auto 0;
+    color: #d2691e;
+    animation: steam 3s infinite ease-in-out;
+}
+
+@keyframes steam {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+h2 {
+    color: #3c2f2f;
+    font-size: 1.7rem;
+    background: linear-gradient(to right, #f5e8d3, #e8d5b8);
+    padding: 20px 28px;
+    border-radius: 16px 16px 0 0;
+    border-bottom: 7px solid #d2691e;
+    margin-bottom: 0;
+}
+
+.item {
+    background: white;
+    margin-bottom: 35px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(60, 47, 47, 0.2);
+    transition: all 0.4s ease;
+}
+
+.item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(139, 69, 19, 0.35);
+}
+
+.item p {
+    padding: 28px 32px;
+    color: #4a3c35;
+    font-size: 1.12rem;
+    background: #fffaf0;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(#2c1e16, #1e140f);
+    color: #d2b48c;
+    text-align: center;
+    padding: 35px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .titulo { font-size: 3.5rem; }
+    .galeria img { width: 190px; height: 165px; }
+    main { padding: 45px 30px; }
+}
